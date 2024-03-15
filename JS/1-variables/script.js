@@ -1,4 +1,7 @@
 // Primitive types:
+// var => function-scoped
+// let, const => block-scoped
+
 console.log("--------Primitive types--------");
 let name = "test";
 name = "reza";
@@ -210,6 +213,7 @@ var sum = function suming() {
 };
 console.log(sum(5, 4, 3, 2, 1));
 
+// Rest Parameter
 var sum2 = (...args) => {
   var total = 0;
   for (const iterator of args) {
@@ -217,10 +221,16 @@ var sum2 = (...args) => {
   }
   return total;
 };
-
 console.log(sum2(1, 2, 3, 4));
 
-function interest(principal, rate, years = 5){
+function shopping(discount, ...args) {
+  const total = args.reduce((a, b) => a + b);
+  return total * (1 - discount);
+}
+console.log(shopping(0.1, 1, 2, 3, 4));
+
+// Parameters
+function interest(principal, rate, years = 5) {
   return ((principal * rate) / 100) * years;
 }
 console.log(interest(100000, 3.5));
