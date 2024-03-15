@@ -169,6 +169,10 @@ console.log(mmp);
 
 // Function:
 console.log("--------Function--------");
+
+// Function Declaration: قبل از تعریفش میتونی صداش بزنی
+greeting("Reza");
+
 function greeting(name) {
   console.log("name: " + name);
 }
@@ -177,3 +181,34 @@ function squear(number) {
 }
 greeting("ali");
 console.log(squear(2));
+
+// Function Expression: قبل از تعریفش نمیتونی صداش بزنی
+//run();
+let run = function () {
+  console.log("run");
+};
+
+let move = run;
+run();
+move();
+
+// arguments
+console.log("----arguments----");
+var sum = function suming() {
+  var total = 0;
+  for (const iterator of arguments) {
+    total += iterator;
+  }
+  return total;
+};
+console.log(sum(5, 4, 3, 2, 1));
+
+var sum2 = (...args) => {
+  var total = 0;
+  for (const iterator of args) {
+    total += iterator;
+  }
+  return total;
+};
+
+console.log(sum2(1, 2, 3, 4));
