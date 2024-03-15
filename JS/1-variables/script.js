@@ -62,6 +62,8 @@ console.log(
   courses.find((course) => (courses.id == 1 ? course.name : "Failed!"))
 );
 
+// Array Concatenation
+console.log("--Array Concatenation--");
 const first = [1, 2, 3];
 const second = [4, 5, 6];
 const combined = first.concat(second);
@@ -80,8 +82,91 @@ console.log(combine);
 
 combine.forEach((element, index) => console.log(index + ": " + element));
 
+// Array Join
+console.log("--Array Join--");
 const joined = num2.join(" / ");
 console.log(joined);
+
+const message = "Neon codeing is cool";
+const parts = message.split(" ");
+console.log(parts);
+const com = parts.join("-");
+console.log(com); /* URL: neonlearn.ir/articles/Neon-codeing-is-cool*/
+
+// Array Sorting
+console.log("--Array Sorting--");
+const num3 = [5, 4, 3, 2, 1];
+num3.sort();
+console.log(num3);
+
+const lessons = [
+  { id: 1, name: "html" },
+  { id: 2, name: "css" },
+  { id: 3, name: "js" },
+];
+lessons.sort(function (a, b) {
+  let nameA = a.name.toLowerCase();
+  let nameB = b.name.toLowerCase();
+  if (nameA < nameB) return -1;
+  if (nameA > nameB) return 1;
+  return 0;
+});
+console.log(lessons);
+
+// Element Testing
+console.log("--Element Testing--");
+const arr1 = [1, 2, -1, 3, 4, 5];
+const allPositive = arr1.every(function (value, index, array) {
+  return value >= 0;
+});
+console.log(allPositive);
+
+const someNegative = arr1.some(function (value, index, array) {
+  return value < 0;
+});
+console.log(someNegative);
+
+// Array Filtering
+console.log("--Array Filtering--");
+const arr2 = [1, 2, -1, 3, 4];
+const filtered = arr2.filter(function (value, index, array) {
+  return value >= 0;
+});
+console.log(filtered);
+
+const terpaper = [
+  { name: "ali", age: 20 },
+  { name: "reza", age: 21 },
+  { name: "adel", age: 22 },
+  { name: "mahshid", age: 23 },
+  { name: "maryam", age: 20 },
+];
+const tempo = terpaper.filter((value) => value.age > 20);
+console.log(tempo);
+
+// Array Mapping
+console.log("--Array Mapping --");
+const tempoo = [1, 3, 5, 7];
+const result = tempoo.map(function (value, index) {
+  return value * 2;
+});
+console.log(result);
+
+const products = ["html", "json", "css", "js"];
+const items = products.map(function (product, index) {
+  return `<li>${product}</li>`;
+});
+console.log(items);
+const html = `<ul>${items.join("")}</ul>`;
+console.log(html);
+
+const templates = products.map((product) => ({ value: product }));
+console.log(templates);
+
+const numm = [1, -1, 2, 3];
+const mmp = numm.filter((value) => value >= 0).map((n) => ({ value: n }));
+console.log(mmp);
+
 // Function:
 console.log("--------Function--------");
 function greeting(name) {
