@@ -167,6 +167,13 @@ const numm = [1, -1, 2, 3];
 const mmp = numm.filter((value) => value >= 0).map((n) => ({ value: n }));
 console.log(mmp);
 
+const arr3 = [1, 2, 3, 4, 5, 6];
+var sum2 = arr3.reduce(function (accumulator, currentValue) {
+  return accumulator + currentValue;
+}, 0);
+// accumulator = 0 , currentValue = arr3[0]; then accumulator + currentValue
+console.log(sum2);
+
 // Function:
 console.log("--------Function--------");
 
@@ -212,3 +219,8 @@ var sum2 = (...args) => {
 };
 
 console.log(sum2(1, 2, 3, 4));
+
+function interest(principal, rate, years = 5){
+  return ((principal * rate) / 100) * years;
+}
+console.log(interest(100000, 3.5));
