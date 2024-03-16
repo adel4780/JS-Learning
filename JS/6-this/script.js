@@ -12,12 +12,20 @@ const video = {
     console.log(this);
   },
   showTags() {
-    this.tags.forEach((tag) => console.log(this.title + ": " + tag), this);
+    this.tags.forEach((tag) => console.log(this.title + ": " + tag));
   },
 };
 
 video.play();
 video.showTags();
+
+function playFilm() {
+  console.log(this);
+}
+playFilm.apply({ name: "YazdeGerd Shah" });
+playFilm.call({ name: "Javid Shah" });
+const fn = playFilm.bind({ name: "Reza Shah" });
+fn();
 
 console.log("--------function -> window--------");
 function playVideo() {
